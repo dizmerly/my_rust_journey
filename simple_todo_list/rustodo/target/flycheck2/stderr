@@ -1,52 +1,12 @@
-   0.014094292s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint: fingerprint error for rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo)/Check { test: false }/TargetInner { name: "rustodo", doc: true, ..: with_path("/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/src/main.rs", Edition2024) }
-   0.014114334s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/rustodo-b63f38aa7fc9a9a2/bin-rustodo`
-
-Caused by:
-    No such file or directory (os error 2)
-
-Stack backtrace:
-   0: <std::backtrace::Backtrace>::create
-   1: <std::backtrace::Backtrace>::capture
-   2: cargo_util::paths::read_bytes
-   3: cargo_util::paths::read
-   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
-   5: cargo::core::compiler::fingerprint::prepare_target
-   6: cargo::core::compiler::compile
-   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
-   8: cargo::ops::cargo_compile::compile_with_exec
-   9: cargo::ops::cargo_compile::compile
-  10: cargo::commands::check::exec
-  11: <cargo::cli::Exec>::exec
-  12: cargo::main
-  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
-  14: std::rt::lang_start::<()>::{closure#0}
-  15: std::rt::lang_start_internal
-  16: _main
-   0.017894209s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint: fingerprint error for rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo)/Check { test: true }/TargetInner { name: "rustodo", doc: true, ..: with_path("/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/src/main.rs", Edition2024) }
-   0.017906000s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/rustodo-6325991b506acfe0/test-bin-rustodo`
-
-Caused by:
-    No such file or directory (os error 2)
-
-Stack backtrace:
-   0: <std::backtrace::Backtrace>::create
-   1: <std::backtrace::Backtrace>::capture
-   2: cargo_util::paths::read_bytes
-   3: cargo_util::paths::read
-   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
-   5: cargo::core::compiler::fingerprint::prepare_target
-   6: cargo::core::compiler::compile
-   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
-   8: cargo::ops::cargo_compile::compile_with_exec
-   9: cargo::ops::cargo_compile::compile
-  10: cargo::commands::check::exec
-  11: <cargo::cli::Exec>::exec
-  12: cargo::main
-  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
-  14: std::rt::lang_start::<()>::{closure#0}
-  15: std::rt::lang_start_internal
-  16: _main
+   0.019417167s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint: stale: changed "/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/src/main.rs"
+   0.019428000s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint:           (vs) "/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/rustodo-03322e8ec1acf20c/dep-bin-rustodo"
+   0.019430625s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1792001704, nanos: 935584374 } < FileTime { seconds: 1792001800, nanos: 662105181 }
+   0.019490625s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint: fingerprint dirty for rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo)/Check { test: false }/TargetInner { name: "rustodo", doc: true, ..: with_path("/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/src/main.rs", Edition2024) }
+   0.019497333s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/rustodo-03322e8ec1acf20c/dep-bin-rustodo", reference_mtime: FileTime { seconds: 1792001704, nanos: 935584374 }, stale: "/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/src/main.rs", stale_mtime: FileTime { seconds: 1792001800, nanos: 662105181 } }))
+   0.021085917s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint: stale: changed "/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/src/main.rs"
+   0.021089333s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint:           (vs) "/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/rustodo-d41901102a82dd6c/dep-test-bin-rustodo"
+   0.021090875s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1792001704, nanos: 935604791 } < FileTime { seconds: 1792001800, nanos: 662105181 }
+   0.021131500s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint: fingerprint dirty for rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo)/Check { test: true }/TargetInner { name: "rustodo", doc: true, ..: with_path("/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/src/main.rs", Edition2024) }
+   0.021135292s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/rustodo-d41901102a82dd6c/dep-test-bin-rustodo", reference_mtime: FileTime { seconds: 1792001704, nanos: 935604791 }, stale: "/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/src/main.rs", stale_mtime: FileTime { seconds: 1792001800, nanos: 662105181 } }))
     Checking rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo)
-error: could not compile `rustodo` (bin "rustodo") due to 3 previous errors; 3 warnings emitted
-warning: build failed, waiting for other jobs to finish...
-error: could not compile `rustodo` (bin "rustodo" test) due to 3 previous errors; 3 warnings emitted
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.08s
