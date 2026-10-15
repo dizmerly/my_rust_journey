@@ -1,12 +1,300 @@
-   0.050288625s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint: stale: changed "/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/src/main.rs"
-   0.050302084s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint:           (vs) "/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/rustodo-4df4911f5612d10b/dep-bin-rustodo"
-   0.050304667s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1792035672, nanos: 234385894 } < FileTime { seconds: 1792035673, nanos: 639677135 }
-   0.050403750s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint: fingerprint dirty for rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo)/Check { test: false }/TargetInner { name: "rustodo", doc: true, ..: with_path("/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/src/main.rs", Edition2024) }
-   0.050411167s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/rustodo-4df4911f5612d10b/dep-bin-rustodo", reference_mtime: FileTime { seconds: 1792035672, nanos: 234385894 }, stale: "/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/src/main.rs", stale_mtime: FileTime { seconds: 1792035673, nanos: 639677135 } }))
-   0.057288459s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint: stale: changed "/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/src/main.rs"
-   0.057295959s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint:           (vs) "/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/rustodo-537034bf96556b58/dep-test-bin-rustodo"
-   0.057297750s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1792035672, nanos: 234414852 } < FileTime { seconds: 1792035673, nanos: 639677135 }
-   0.057333500s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint: fingerprint dirty for rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo)/Check { test: true }/TargetInner { name: "rustodo", doc: true, ..: with_path("/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/src/main.rs", Edition2024) }
-   0.057339334s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/rustodo-537034bf96556b58/dep-test-bin-rustodo", reference_mtime: FileTime { seconds: 1792035672, nanos: 234414852 }, stale: "/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/src/main.rs", stale_mtime: FileTime { seconds: 1792035673, nanos: 639677135 } }))
+    Blocking waiting for file lock on package cache
+   0.056914750s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint: fingerprint error for rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo)/Check { test: false }/TargetInner { name: "rustodo", doc: true, ..: with_path("/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/src/main.rs", Edition2024) }
+   0.056930666s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/rustodo-4667fba2bc5873c6/bin-rustodo`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::backtrace::Backtrace>::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.060276166s  INFO prepare_target{force=false package_id=gstd v2.0.0 target="gstd"}: cargo::core::compiler::fingerprint: fingerprint error for gstd v2.0.0/Check { test: false }/TargetInner { ..: lib_target("gstd", ["lib"], "/Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gstd-2.0.0/src/lib.rs", Edition2024) }
+   0.060286458s  INFO prepare_target{force=false package_id=gstd v2.0.0 target="gstd"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/gstd-57128d902e27c9a0/lib-gstd`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::backtrace::Backtrace>::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+   0.060949208s  INFO prepare_target{force=false package_id=galloc v2.0.0 target="galloc"}: cargo::core::compiler::fingerprint: fingerprint error for galloc v2.0.0/Check { test: false }/TargetInner { ..: lib_target("galloc", ["lib"], "/Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/galloc-2.0.0/src/lib.rs", Edition2024) }
+   0.060953916s  INFO prepare_target{force=false package_id=galloc v2.0.0 target="galloc"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/galloc-3200fd8351016bd9/lib-galloc`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::backtrace::Backtrace>::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.061374291s  INFO prepare_target{force=false package_id=gear-workspace-hack v0.1.0 target="gear_workspace_hack"}: cargo::core::compiler::fingerprint: fingerprint error for gear-workspace-hack v0.1.0/Check { test: false }/TargetInner { ..: lib_target("gear_workspace_hack", ["lib"], "/Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gear-workspace-hack-0.1.0/src/lib.rs", Edition2024) }
+   0.061380500s  INFO prepare_target{force=false package_id=gear-workspace-hack v0.1.0 target="gear_workspace_hack"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/gear-workspace-hack-df125397864d4c89/lib-gear_workspace_hack`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::backtrace::Backtrace>::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.061514541s  INFO prepare_target{force=false package_id=gcore v2.0.0 target="gcore"}: cargo::core::compiler::fingerprint: fingerprint error for gcore v2.0.0/Check { test: false }/TargetInner { ..: lib_target("gcore", ["lib"], "/Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gcore-2.0.0/src/lib.rs", Edition2024) }
+   0.061519833s  INFO prepare_target{force=false package_id=gcore v2.0.0 target="gcore"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/gcore-1c8e2e39636a4ed9/lib-gcore`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::backtrace::Backtrace>::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.061796125s  INFO prepare_target{force=false package_id=gear-core-errors v2.0.0 target="gear_core_errors"}: cargo::core::compiler::fingerprint: fingerprint error for gear-core-errors v2.0.0/Check { test: false }/TargetInner { ..: lib_target("gear_core_errors", ["lib"], "/Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gear-core-errors-2.0.0/src/lib.rs", Edition2024) }
+   0.061801291s  INFO prepare_target{force=false package_id=gear-core-errors v2.0.0 target="gear_core_errors"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/gear-core-errors-935af4a589d2506e/lib-gear_core_errors`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::backtrace::Backtrace>::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.063635083s  INFO prepare_target{force=false package_id=gear-stack-buffer v2.0.0 target="gear_stack_buffer"}: cargo::core::compiler::fingerprint: fingerprint error for gear-stack-buffer v2.0.0/Check { test: false }/TargetInner { ..: lib_target("gear_stack_buffer", ["lib"], "/Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gear-stack-buffer-2.0.0/src/lib.rs", Edition2024) }
+   0.063642208s  INFO prepare_target{force=false package_id=gear-stack-buffer v2.0.0 target="gear_stack_buffer"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/gear-stack-buffer-d99971bd661ee8ec/lib-gear_stack_buffer`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::backtrace::Backtrace>::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.063872958s  INFO prepare_target{force=false package_id=gprimitives v2.0.0 target="gprimitives"}: cargo::core::compiler::fingerprint: fingerprint error for gprimitives v2.0.0/Check { test: false }/TargetInner { ..: lib_target("gprimitives", ["lib"], "/Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gprimitives-2.0.0/src/lib.rs", Edition2024) }
+   0.063875583s  INFO prepare_target{force=false package_id=gprimitives v2.0.0 target="gprimitives"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/gprimitives-ff138648077bf60e/lib-gprimitives`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::backtrace::Backtrace>::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.064254166s  INFO prepare_target{force=false package_id=gear-ss58 v2.0.0 target="gear_ss58"}: cargo::core::compiler::fingerprint: fingerprint error for gear-ss58 v2.0.0/Check { test: false }/TargetInner { ..: lib_target("gear_ss58", ["lib"], "/Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gear-ss58-2.0.0/src/lib.rs", Edition2024) }
+   0.064257625s  INFO prepare_target{force=false package_id=gear-ss58 v2.0.0 target="gear_ss58"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/gear-ss58-10ddb1ffce2fd58b/lib-gear_ss58`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::backtrace::Backtrace>::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.064801666s  INFO prepare_target{force=false package_id=gsys v2.0.0 target="gsys"}: cargo::core::compiler::fingerprint: fingerprint error for gsys v2.0.0/Check { test: false }/TargetInner { ..: lib_target("gsys", ["lib"], "/Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gsys-2.0.0/src/lib.rs", Edition2024) }
+   0.064804625s  INFO prepare_target{force=false package_id=gsys v2.0.0 target="gsys"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/gsys-5ad0232d3e1e255f/lib-gsys`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::backtrace::Backtrace>::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.067513958s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint: fingerprint error for rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo)/Check { test: true }/TargetInner { name: "rustodo", doc: true, ..: with_path("/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/src/main.rs", Edition2024) }
+   0.067520041s  INFO prepare_target{force=false package_id=rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo) target="rustodo"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/.fingerprint/rustodo-adf69ca8cdce3ebc/test-bin-rustodo`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::backtrace::Backtrace>::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+    Checking gear-workspace-hack v0.1.0
+    Checking gear-ss58 v2.0.0
+    Checking gear-core-errors v2.0.0
+    Checking gsys v2.0.0
+    Checking gear-stack-buffer v2.0.0
+    Checking galloc v2.0.0
+    Checking gprimitives v2.0.0
+    Checking gcore v2.0.0
+    Checking gstd v2.0.0
     Checking rustodo v0.1.0 (/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.13s
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.67s

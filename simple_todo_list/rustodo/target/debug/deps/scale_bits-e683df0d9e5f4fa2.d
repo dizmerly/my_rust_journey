@@ -1,0 +1,10 @@
+/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/deps/scale_bits-e683df0d9e5f4fa2.d: /Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/lib.rs /Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/bits/mod.rs /Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/bits/bits.rs /Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/scale/mod.rs /Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/scale/decode_iter.rs /Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/scale/encode_iter.rs
+
+/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/deps/libscale_bits-e683df0d9e5f4fa2.rmeta: /Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/lib.rs /Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/bits/mod.rs /Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/bits/bits.rs /Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/scale/mod.rs /Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/scale/decode_iter.rs /Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/scale/encode_iter.rs
+
+/Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/lib.rs:
+/Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/bits/mod.rs:
+/Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/bits/bits.rs:
+/Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/scale/mod.rs:
+/Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/scale/decode_iter.rs:
+/Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.7.0/src/scale/encode_iter.rs:

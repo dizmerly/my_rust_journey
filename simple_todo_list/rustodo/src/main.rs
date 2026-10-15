@@ -1,5 +1,6 @@
 use std::fs;
-use std::io; 
+use std::io;
+use gstd;
 use std::io::prelude::*; 
 use serde::{Serialize, Deserialize};
 use std::fs::File;
@@ -15,16 +16,20 @@ struct Task {
     command: String,
     name: Option<String>, 
     description: Option<String>,
-    status: Option<String>,
+    completion_status: Option<bool>,
 }
 
 // Adds to a constant filepath defined at the top of the program
-fn add_task(task: Task) {
+fn add_task(mut task: Task) {
     let mut task_list_file = OpenOptions::new()
         .append(true)
         .open(TASK_PATH)
         .expect("Could not open file");
 
+    if task.completion_status == None { 
+        task.completion_status = gstd::Some(false); 
+    }
+    
     let task = toml::to_string_pretty(&task).expect("Could not convert string");
     task_list_file.write_all(task.as_bytes()).expect("Could not write to file");    
 }
@@ -32,6 +37,18 @@ fn add_task(task: Task) {
 fn show_tasks() -> io::Result<()> {
     let task_list_file = fs::read_to_string(TASK_PATH)?;
     println!("Task List\n {}", task_list_file);
+    Ok(())
+}
+
+fn finish_task(task_name: String) -> io::Result<()> { 
+    let mut task_list_file = OpenOptions::new()
+        .write(true)
+        .read(true)
+        .open(TASK_PATH)
+        .expect("Could not open file");
+
+
+    
     Ok(())
 }
 

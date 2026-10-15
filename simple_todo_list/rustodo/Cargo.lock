@@ -451,16 +451,42 @@ dependencies = [
 ]
 
 [[package]]
+name = "galloc"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "951e7121ecff964065b8114910fd05c737a842c9eefc2b804b981212da897248"
+dependencies = [
+ "gear-dlmalloc",
+ "gear-workspace-hack",
+]
+
+[[package]]
 name = "gcore"
 version = "1.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "015093eb24aa69f98f6474a9547a51a1a9230204e55a1778e9c8588cd8ee6047"
 dependencies = [
  "arrayvec",
- "gear-core-errors",
- "gear-stack-buffer",
- "gprimitives",
- "gsys",
+ "gear-core-errors 1.10.0",
+ "gear-stack-buffer 1.10.0",
+ "gprimitives 1.10.0",
+ "gsys 1.10.0",
+ "paste",
+ "thiserror",
+]
+
+[[package]]
+name = "gcore"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9ce78599a60da0d1598a239fc054af2e735f87a99b66ce014e90676a9b8c6777"
+dependencies = [
+ "arrayvec",
+ "gear-core-errors 2.0.0",
+ "gear-stack-buffer 2.0.0",
+ "gear-workspace-hack",
+ "gprimitives 2.0.0",
+ "gsys 2.0.0",
  "paste",
  "thiserror",
 ]
@@ -472,6 +498,21 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a068b7e99afbedd710b959a20c8ac91b2cc77f8a0ce87af687b673bfbf26a809"
 dependencies = [
  "enum-iterator",
+ "parity-scale-codec",
+ "scale-decode",
+ "scale-encode",
+ "scale-info",
+ "thiserror",
+]
+
+[[package]]
+name = "gear-core-errors"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "36202281e94045e20eb1fc5487b6e6fff6a1b5478f9a4766c18405bf8f6d7431"
+dependencies = [
+ "enum-iterator",
+ "gear-workspace-hack",
  "parity-scale-codec",
  "scale-decode",
  "scale-encode",
@@ -504,10 +545,37 @@ dependencies = [
 ]
 
 [[package]]
+name = "gear-ss58"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3040b428523d834539c853a3558ed53b81db8d2b7fd27e35f308befb6c2ac154"
+dependencies = [
+ "blake2",
+ "bs58",
+ "gear-workspace-hack",
+ "hex",
+]
+
+[[package]]
 name = "gear-stack-buffer"
 version = "1.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "51d30f39766a97c23c841c55e868d93e01e146ace585aa36b291b4c46b9d0c15"
+
+[[package]]
+name = "gear-stack-buffer"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "21b8d1fccedf9879f91341f4a3959cc9e606d610958a7fdc6d151d133ac60adb"
+dependencies = [
+ "gear-workspace-hack",
+]
+
+[[package]]
+name = "gear-workspace-hack"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "76ac67118eef8a153d4df06bd865d0a5c3ac51888c238673a203a5c424db0327"
 
 [[package]]
 name = "generic-array"
@@ -539,7 +607,25 @@ checksum = "9f79911d3caeb051ae07b0d4b57c196fdc6e105f7be7cc51365416d7248ca5ce"
 dependencies = [
  "bytemuck",
  "derive_more 2.1.1",
- "gear-ss58",
+ "gear-ss58 1.10.0",
+ "hex",
+ "primitive-types 0.12.2",
+ "scale-decode",
+ "scale-encode",
+ "scale-info",
+ "thiserror",
+]
+
+[[package]]
+name = "gprimitives"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9cd04276cf7a5d92452f9e32928718c637d007e57c5a5eb38debbff0e9441ed2"
+dependencies = [
+ "bytemuck",
+ "derive_more 2.1.1",
+ "gear-ss58 2.0.0",
+ "gear-workspace-hack",
  "hex",
  "primitive-types 0.12.2",
  "scale-decode",
@@ -557,11 +643,34 @@ dependencies = [
  "arrayvec",
  "const_format",
  "futures",
- "galloc",
- "gcore",
- "gear-core-errors",
- "gprimitives",
- "gstd-codegen",
+ "galloc 1.10.0",
+ "gcore 1.10.0",
+ "gear-core-errors 1.10.0",
+ "gprimitives 1.10.0",
+ "gstd-codegen 1.10.0",
+ "hashbrown 0.14.5",
+ "hex",
+ "parity-scale-codec",
+ "scale-info",
+ "thiserror",
+ "waker-fn",
+]
+
+[[package]]
+name = "gstd"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9cd0995297f19691550dde3cb36a4b01440f994a46f67beb9e3ee78714346fef"
+dependencies = [
+ "arrayvec",
+ "const_format",
+ "futures",
+ "galloc 2.0.0",
+ "gcore 2.0.0",
+ "gear-core-errors 2.0.0",
+ "gear-workspace-hack",
+ "gprimitives 2.0.0",
+ "gstd-codegen 2.0.0",
  "hashbrown 0.14.5",
  "hex",
  "parity-scale-codec",
@@ -576,7 +685,20 @@ version = "1.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3b347d845d9fdc17b47288d082fd7001390d0652acb5d221c29a1b3f16e9a238"
 dependencies = [
- "gprimitives",
+ "gprimitives 1.10.0",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.119",
+]
+
+[[package]]
+name = "gstd-codegen"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9fc2fe61420c97493f56f44fdda17404d7fe2e632f45e3c1041d16e18edebdfe"
+dependencies = [
+ "gear-workspace-hack",
+ "gprimitives 2.0.0",
  "proc-macro2",
  "quote",
  "syn 2.0.119",
@@ -589,6 +711,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "31b08a4ef9c0f6aed528b42117cea34f53af2a4a7f080c04b4356eb63adc9302"
 dependencies = [
  "bytemuck",
+]
+
+[[package]]
+name = "gsys"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8cda4b75bb3bd71c8e83ac31b38cc8659b05500d994a87ed39b1fb56a2edc4a2"
+dependencies = [
+ "bytemuck",
+ "gear-workspace-hack",
 ]
 
 [[package]]
@@ -662,7 +794,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "aba460b987a14c5de30128ae8c1fb69f60b622b71317dd4f6e187722f09550c1"
 dependencies = [
  "gmeta",
- "gstd",
+ "gstd 1.10.0",
  "parity-scale-codec",
  "scale-info",
 ]
@@ -838,6 +970,7 @@ name = "rustodo"
 version = "0.1.0"
 dependencies = [
  "clap",
+ "gstd 2.0.0",
  "io",
  "serde",
  "toml",
