@@ -63,6 +63,20 @@ fn main(){
         "pokazhi" => {
             show_tasks(); 
         }
+        // Удали - delete
+        "udali" => { 
+            println!("udalil");
+        }
+        // Измени - change
+        "izmeni" => { 
+            println!("izmenil");
+        }
+        
+        // Закончил - finished
+        "zakonchil" => { 
+            println!("zakonchil");
+        }
+
         // Убери - clean
         "uberi" => {
             clean_tasks().expect("Could not clean file");
