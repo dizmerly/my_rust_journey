@@ -8,6 +8,7 @@ use std::fs::OpenOptions;
 use toml;
 use clap::Parser;
 
+
 const TASK_PATH: &str = "./tasks.toml";
 
 
@@ -18,6 +19,7 @@ struct Task {
     description: Option<String>,
     completion_status: Option<bool>,
 }
+
 
 // Adds to a constant filepath defined at the top of the program
 fn add_task(mut task: Task) {
@@ -34,11 +36,13 @@ fn add_task(mut task: Task) {
     task_list_file.write_all(task.as_bytes()).expect("Could not write to file");    
 }
 
+
 fn show_tasks() -> io::Result<()> {
     let task_list_file = fs::read_to_string(TASK_PATH)?;
     println!("Task List\n {}", task_list_file);
     Ok(())
 }
+
 
 fn finish_task(task_name: String) -> io::Result<()> { 
     let mut task_list_file = OpenOptions::new()
@@ -46,6 +50,8 @@ fn finish_task(task_name: String) -> io::Result<()> {
         .read(true)
         .open(TASK_PATH)
         .expect("Could not open file");
+    
+    
     Ok(())
 }
 
@@ -101,6 +107,8 @@ fn main(){
                     dobavit - add\n
                     pokazhi - show\n
                     uberi - clean\n
+                    izmeni - change\n
+                    zakonchil - finished\n
                 ");
         }
         "pomagi" => {
@@ -108,6 +116,8 @@ fn main(){
                     dobavit - add\n
                     pokazhi - show\n
                     uberi - clean\n
+                    izmeni - change\n
+                    zakonchil - finished\n
                 ");
         }
         
