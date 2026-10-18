@@ -52,7 +52,10 @@ fn finish_task(task_name: String) -> io::Result<()> {
         .read(true)
         .open(TASK_PATH)
         .expect("Could not open file");
+<<<<<<< HEAD
 
+=======
+>>>>>>> a4ecb2a82ffee041129034fb74130f04756a47ef
     Ok(())
 }
 

@@ -1,0 +1,7 @@
+/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/deps/str_buf-bded55b94e7f3077.d: /Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/str-buf-3.0.3/src/lib.rs
+
+/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/deps/libstr_buf-bded55b94e7f3077.rlib: /Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/str-buf-3.0.3/src/lib.rs
+
+/Users/dizmerly/repos/my_rust_journey/simple_todo_list/rustodo/target/debug/deps/libstr_buf-bded55b94e7f3077.rmeta: /Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/str-buf-3.0.3/src/lib.rs
+
+/Users/dizmerly/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/str-buf-3.0.3/src/lib.rs:
