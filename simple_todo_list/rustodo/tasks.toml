@@ -1,0 +1,5 @@
+[[tasks]]
+command = "dobav"
+name = "delo"
+description = "segodnya"
+completion_status = true

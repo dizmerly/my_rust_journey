@@ -50,14 +50,26 @@ fn show_tasks() -> io::Result<()> {
 }
 
 
-fn finish_task(task_name: String) -> io::Result<()> { 
-    let mut task_list_file = OpenOptions::new()
-        .write(true)
-        .read(true)
-        .open(TASK_PATH)
-        .expect("Could not open file");
-    
-    
+fn finish_task(task_name: Option<String>) -> io::Result<()> { 
+    let contents = fs::read_to_string(TASK_PATH)?;
+    let mut task_list: TaskList = toml::from_str(&contents)
+        .expect("Couldn't convert toml file into list");
+
+    for task in &mut task_list.tasks {
+        match &task.name {
+            name if name == &task_name => {
+                task.completion_status = Some(true);
+            }
+            _ => {
+                continue
+            }
+        }
+    }
+
+    let updated_contents = toml::to_string_pretty(&task_list)
+        .expect("Couldn't serialize updated task list");
+
+    fs::write(TASK_PATH, updated_contents)?;
     Ok(())
 }
 
@@ -83,6 +95,9 @@ fn main() {
         "dobavit" => {
             add_task(args, task_list);
         }
+        "dobav" => {
+            add_task(args, task_list);
+        }
         // Покажи - show
         "pokazhi" => {
             show_tasks();
@@ -98,7 +113,7 @@ fn main() {
 
         // Закончил - finished
         "zakonchil" => {
-            println!("zakonchil");
+            finish_task(args.name);
         }
 
         // Убери - clean
