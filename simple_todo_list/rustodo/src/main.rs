@@ -2,7 +2,6 @@ use clap::Parser;
 use gstd;
 use serde::{Deserialize, Serialize};
 use std::fs;
-use std::fs::File;
 use std::fs::OpenOptions;
 use std::io;
 use std::io::prelude::*;
@@ -49,16 +48,65 @@ fn show_tasks() -> io::Result<()> {
     Ok(())
 }
 
-
-fn finish_task(task_name: Option<String>) -> io::Result<()> { 
+fn finish_task(task_name: Option<String>) -> io::Result<()> {
     let contents = fs::read_to_string(TASK_PATH)?;
     let mut task_list: TaskList = toml::from_str(&contents)
         .expect("Couldn't convert toml file into list");
-
     for task in &mut task_list.tasks {
         match &task.name {
             name if name == &task_name => {
                 task.completion_status = Some(true);
+            }
+            _ => {
+                continue
+            }
+        }
+    }
+
+    
+    let updated_contents = toml::to_string_pretty(&task_list)
+        .expect("Couldn't serialize updated task list");
+
+    fs::write(TASK_PATH, updated_contents)?;
+    Ok(())
+}
+
+
+fn change_task(task_name: Option<String>) -> io::Result<()> { 
+    let contents = fs::read_to_string(TASK_PATH)?;
+    let mut task_list: TaskList = toml::from_str(&contents)
+        .expect("Couldn't convert toml file into list");
+    
+    for task in &mut task_list.tasks {
+        match &task.name {
+            name if name == &task_name => {
+                println!("Would you like to change the name or description? Enter (n/d)");
+                let mut choice = String::new();
+                io::stdin().read_line(&mut choice)?;
+
+                loop {
+                    match choice.trim() {
+                        "n" =>{
+                            println!("Enter new name: ");
+                            let mut new_name = String::new();
+                            io::stdin().read_line(&mut new_name)?;
+                            task.name = Some(new_name);
+                            break;
+                        }
+                        
+                        "d" => {
+                            println!("Enter new description: ");
+                            let mut new_description = String::new();
+                            io::stdin().read_line(&mut new_description)?;
+                            task.name = Some(new_description);
+                            break;
+                        }
+                        _ => {
+                            println!("Please enter n or d for either name or description")
+                        }
+                    }
+                }
+                
             }
             _ => {
                 continue
@@ -87,7 +135,7 @@ fn clean_tasks() -> std::io::Result<()> {
 fn main() {
     // let the program read some sort of arguments and parse them
     let args = Task::parse();
-    let mut task_list = TaskList { tasks: Vec::new() };
+    let task_list = TaskList { tasks: Vec::new() };
 
     // Match command to the appropriate action the user wants to perform
     match args.command.as_str() {
@@ -100,7 +148,7 @@ fn main() {
         }
         // Покажи - show
         "pokazhi" => {
-            show_tasks();
+            show_tasks().expect("Could not show tasks");
         }
         // Удали - delete
         "udali" => {
@@ -108,12 +156,13 @@ fn main() {
         }
         // Измени - change
         "izmeni" => {
+            change_task(args.name).expect("Could not change task");
             println!("izmenil");
         }
 
         // Закончил - finished
         "zakonchil" => {
-            finish_task(args.name);
+            finish_task(args.name).expect("Could not finish task");
         }
 
         // Убери - clean
